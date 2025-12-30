@@ -14,11 +14,11 @@ type Todo struct {
 	Text string    `json:"text"`
 }
 
-func New(text string) (Todo, error) {
+func New(text string) (*Todo, error) {
 	if text == "" {
-		return Todo{}, errors.New("Note content should not be empty.")
+		return &Todo{}, errors.New("Note content should not be empty.")
 	}
-	return Todo{
+	return &Todo{
 		Id:   uuid.New(),
 		Text: text,
 	}, nil
@@ -26,7 +26,7 @@ func New(text string) (Todo, error) {
 
 func (n *Todo) Print() {
 	fmt.Println("ID: ", n.Id)
-	fmt.Println("Content: ", n.Text)
+	fmt.Println("Todo: ", n.Text)
 }
 
 func (n *Todo) Save() error {
