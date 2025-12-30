@@ -4,11 +4,12 @@ import (
 	"fmt"
 
 	"example.com/note/notes"
+	"example.com/note/utils"
 )
 
 func main() {
-	title := notes.GetInput("Enter note title: ")
-	content := notes.GetInput("Enter note content: ")
+	title := utils.GetInput("Enter note title: ")
+	content := utils.GetInput("Enter note content: ")
 
 	newNote, err := notes.New(title, content)
 
