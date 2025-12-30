@@ -1,7 +1,6 @@
 package notes
 
 import (
-	"bufio"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -54,20 +53,4 @@ func (n *Note) Save() error {
 	writeErr := os.WriteFile(fileName, jsonData, 0644)
 
 	return writeErr
-}
-
-func GetInput(prompt string) string {
-	fmt.Print(prompt)
-
-	reader := bufio.NewReader(os.Stdin)
-	text, err := reader.ReadString('\n')
-
-	if err != nil {
-		return ""
-	}
-
-	text = strings.TrimSuffix(text, "\n")
-	text = strings.TrimSuffix(text, "\r")
-
-	return text
 }
