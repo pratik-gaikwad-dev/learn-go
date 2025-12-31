@@ -10,18 +10,16 @@ import (
 
 func main() {
 	// Print Generic -- Can pass both values of same type only not different type
-	utils.PrintGeneric(1, 1)     // Ok
-	utils.PrintGeneric(1, "str") // Not Ok
+	// utils.PrintGeneric(1, 1) // Ok
+	// utils.PrintGeneric(1, "str") // Not Ok
 
 	// Print Any
-	utils.PrintValue(1)
-	utils.PrintValue(1.1)
-	utils.PrintValue("Anything")
+	// utils.PrintValue(1)
+	// utils.PrintValue(1.1)
+	// utils.PrintValue("Anything")
 
 	// Todo
 	text := utils.GetInput("Enter Task: ")
-
-	fmt.Println()
 
 	// Notes
 	title := utils.GetInput("Enter note title: ")
@@ -62,5 +60,7 @@ func main() {
 	if todoSaveErr != nil {
 		fmt.Println(todoSaveErr)
 	}
+
+	// newTodo.PrintAll()
 
 }
